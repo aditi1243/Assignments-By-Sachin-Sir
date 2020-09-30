@@ -4,36 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EvenNaturalNos
+namespace SumOfDigits1
 {
     class Program
     {
         static void Main(string[] args)
         {
-
-            int i = 0;
-
-            Console.WriteLine("Even Numbers :");
-            for (i = 1; i <= 10; i++)
+            Console.Write("Input  a number(integer): ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+            while (n != 0)
             {
-                if (i % 2 == 0)
-                {
-                    Console.Write(i + " ");
-                }
+                sum += n % 10;
+                n /= 10;
             }
-
-            Console.WriteLine("\nOdd Numbers :");
-            for (i = 1; i <= 10; i++)
-            {
-                if (i % 2 != 0)
-                {
-                    Console.Write(i + " ");
-                }
-            }
-
-            Console.WriteLine();
+            Console.WriteLine("Sum of the digits of the said integer: " + sum);
             Console.ReadKey();
-
 
         }
     }

@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AnonymysMethod
+{
+    //Defining the delegate
+    public delegate void GreetsDelegate(string str);
+    public delegate void AddDelegate1(float x,float y,int z);
+    public delegate void SquareDelegate(int x);
+    public delegate void CubeDelegate(int x);
+    public delegate void HashtageDelegate(string strr);
+
+    class Anony__UsingVoid
+    {
+        static void Main(string[] args)
+        {
+            //Instantiating the delegate
+
+            GreetsDelegate obj1 = delegate(string str)
+            {
+                Console.WriteLine(str);
+            };
+            obj1.Invoke("Heeelllooooo");
+            
+
+
+            AddDelegate1 obj2 = delegate (float x, float y, int z)
+            {
+                Console.WriteLine(x + y + z);
+            };
+            obj2.Invoke(12.5f, 10.22f,19);
+           
+
+            SquareDelegate obj3 = delegate (int x)
+            {
+                Console.WriteLine(x * x);
+            };
+            obj3.Invoke(5);
+           
+
+
+            CubeDelegate obj4 = delegate (int x)
+            {
+                Console.WriteLine(x * x * x);
+            };
+            obj4.Invoke(5);
+
+            HashtageDelegate obj5 = delegate (string strr)
+            {
+                Console.WriteLine(strr);
+            };
+            obj5.Invoke("Dot-Net is quite intresting");
+
+
+            Console.WriteLine();
+            Console.ReadKey();
+
+
+
+
+
+        }
+    }
+}

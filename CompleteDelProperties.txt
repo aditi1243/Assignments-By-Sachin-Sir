@@ -1,0 +1,408 @@
+
+
+                     ******************Implementation of Delegate*********************
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Delegate
+{
+    //Defined the delegates with respect to the methods defined below---
+
+    public delegate double Addnums1Delegate(int x, float y, double z);
+    public delegate void Addnums2Delegate(int x, float y, double z);
+    public delegate bool CheckLengthDelegate(string str);
+    public delegate double Subnums1Delegate(double x, float y, double z);
+    public delegate void MulnumsDelegate(int x, float y, float z);
+    public delegate bool IsUpperCaseDelegate(string str);
+
+
+    class Program
+    {
+       //Method with returning vlue
+       
+        public static double Addnums1(int x, float y, double z)
+        {
+          return (x + y + z);
+        }
+
+        public static double Subnums1(double x, float y, double z)
+        {
+            return (x - y - z);
+        }
+
+        //Method without returning value
+        
+        public static void Addnums2(int x, float y, double z)
+        {
+            Console.WriteLine(x + y + z);
+        }
+
+        public static void Mulnums(int x, float y, float z)
+        {
+            Console.WriteLine(x * y * z);
+        }
+
+        //Boolean Functions
+        
+         public static bool CheckLength(string name)
+        {
+            //Check the string whose length is greater than 4 should print true else false
+            if (name.Length > 4)
+                return true;
+            return false;
+
+        }
+
+        public static bool IsUpperCase(string str)
+        {
+            return str.Equals(str.ToUpper());
+        }
+
+
+        //Main Function
+
+        static void Main(string[] args)
+        {
+
+            //*************Instantiating the delegate***************
+
+             Addnums1Delegate obj1 = new Addnums1Delegate(Addnums1 ); //Return type
+            {
+                double result = obj1.Invoke(20, 4.123f, 4567.897676);//Delegate in my method----new variable to store my value
+                Console.WriteLine(result);
+            }
+
+            Subnums1Delegate obj2 = new Subnums1Delegate(Subnums1);//Return Type
+            {
+                double result1 = obj2.Invoke(1234567.23456789, 4.142f, 123.4567);
+                Console.WriteLine(result1);
+            }
+
+            Addnums2Delegate obj3 = new Addnums2Delegate(Addnums2);//non-return type
+            {
+                obj3.Invoke(10, 3.142f, 12345.12345678);
+               // Console.WriteLine();
+
+            }
+
+            MulnumsDelegate obj4 = new MulnumsDelegate(Mulnums);//Non-return type
+            {
+                obj4.Invoke(50, 34.21f,20.05f );
+                //Console.WriteLine();
+            }
+
+            CheckLengthDelegate obj5 = new CheckLengthDelegate(CheckLength);//New variable to store the value----return bool type
+            {
+                bool check = obj5.Invoke("Aditi");
+                Console.WriteLine(check);
+
+            }
+
+            IsUpperCaseDelegate obj6 = new IsUpperCaseDelegate(IsUpperCase);
+            {
+                bool check2 = obj6.Invoke("Hello World");
+                Console.WriteLine(check2);
+            }
+
+            Console.ReadKey();
+
+
+
+        }
+    }
+}
+
+
+
+
+          *********************Implementation of Anonymous**********************************
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Anonymous
+{
+    //Defined the delegates with respect to the methods defined below
+
+    public delegate double Addnums1Delegate(int x, float y, double z);
+    public delegate void Addnums2Delegate(int x, float y, double z);
+    public delegate bool CheckLengthDelegate(string str);
+    public delegate double Subnums1Delegate(double x, float y, double z);
+    public delegate void MulnumsDelegate(int x, float y, float z);
+    public delegate bool IsUpperCaseDelegate(string str);
+
+
+    class Program
+    {
+       //Main Function
+
+        static void Main(string[] args)
+        {
+
+            //*********Instantiating the delegate**********
+
+             Addnums1Delegate obj1 = delegate(int x, float y, double z) //Return type----Anonymous----Unamed
+            {
+                return (x + y + z);
+                
+            };
+            double result = obj1.Invoke(20, 4.123f, 4567.897676);//To pass values
+            Console.WriteLine(result);
+
+            Subnums1Delegate obj2 = delegate(double x, float y, double z)
+        
+            {
+                return (x - y - z);
+               
+            };
+            double result1 = obj2.Invoke(1234567.23456789, 4.142f, 123.4567);
+            Console.WriteLine(result1);
+
+            Addnums2Delegate obj3 = delegate (int x, float y, double z)//non-return type
+
+            {
+                Console.WriteLine(x + y + z);
+
+            };
+            obj3.Invoke(10, 3.142f, 12345.12345678);
+            // Console.WriteLine();
+
+                MulnumsDelegate obj4 = delegate (int x, float y, float z)//Anonymous Functions---Non-return type
+            {
+                Console.WriteLine(x * y * z);
+
+            };
+
+            obj4.Invoke(50, 34.21f, 20.05f);
+            //Console.WriteLine();
+
+            CheckLengthDelegate obj5 = delegate(string name)//Anonymous Function---Bool type 
+            {
+
+                //Check the string whose length is greater than 4 should print true else false
+                if (name.Length > 4)
+                    return true;
+                return false;
+            };
+
+            bool check = obj5.Invoke("Aditi");
+            Console.WriteLine(check);
+
+            IsUpperCaseDelegate obj6 = delegate (string str)
+            {
+                return str.Equals(str.ToUpper()); ;
+            };
+            bool check2 = obj6.Invoke("Hello World");
+            Console.WriteLine(check2);
+
+            Console.ReadKey();
+
+
+
+        }
+    }
+}
+
+
+
+     ****************************************Implementation of Lambda***************************************
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lambda
+{
+    //Defined the delegates with respect to the methods defined below
+
+    public delegate double Addnums1Delegate(int x, float y, double z);
+    public delegate void Addnums2Delegate(int x, float y, double z);
+    public delegate bool CheckLengthDelegate(string str);
+    public delegate double Subnums1Delegate(double x, float y, double z);
+    public delegate void MulnumsDelegate(int x, float y, float z);
+    public delegate bool IsUpperCaseDelegate(string str);
+
+
+    class Program
+    {
+       //Main Function
+
+        static void Main(string[] args)
+        {
+
+            //*********Instantiating the delegate**********
+
+             Addnums1Delegate obj1 = (x,y,z) => //Lambda Operator
+            {
+                return (x + y + z);
+                
+            };
+            double result = obj1.Invoke(20, 4.123f, 4567.897676);//Delegate in my method----new variable to store my value-----return type
+            Console.WriteLine(result);
+
+            Subnums1Delegate obj2 = (x,y,z) => //Lambda Operatore
+        
+            {
+                return (x - y - z);
+               
+            };
+            double result1 = obj2.Invoke(1234567.23456789, 4.142f, 123.4567); //Return Type
+            Console.WriteLine(result1);
+
+            Addnums2Delegate obj3 = (x,y, z) => // Lambda Operator
+
+            {
+                Console.WriteLine(x + y + z);//// non-return type
+
+            };
+            obj3.Invoke(10, 3.142f, 12345.12345678);
+            // Console.WriteLine();
+
+                MulnumsDelegate obj4 = ( x,y,z) =>//Lambda operator
+            {
+                Console.WriteLine(x * y * z);//non-return type
+
+            };
+
+            obj4.Invoke(50, 34.21f, 20.05f);
+            //Console.WriteLine();
+
+            CheckLengthDelegate obj5 = (name) => //lambda Operato
+            {
+
+                //Check the string whose length is greater than 4 should print true else false
+                if (name.Length > 4)
+                    return true;
+                return false;
+            };
+
+            bool check = obj5.Invoke("Aditi");//---Bool type 
+            Console.WriteLine(check);
+
+            IsUpperCaseDelegate obj6 = (str) => //Lambda operator
+            {
+                return str.Equals(str.ToUpper()); ;
+            };
+            bool check2 = obj6.Invoke("Hello World"); //Bool type
+            Console.WriteLine(check2);
+
+            Console.ReadKey();
+
+
+
+        }
+    }
+}
+
+
+
+       **************************Applying -Func,Action,Predicate***************************
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FuncActPred
+{
+    //Defined the delegates with respect to the methods defined below
+
+    public delegate double Addnums1Delegate(int x, float y, double z);
+    public delegate void Addnums2Delegate(int x, float y, double z);
+    public delegate bool CheckLengthDelegate(string str);
+    public delegate double Subnums1Delegate(double x, float y, double z);
+    public delegate void MulnumsDelegate(int x, float y, float z);
+    public delegate bool IsUpperCaseDelegate(string str);
+
+
+    class Program
+    {
+       //Main Function
+
+        static void Main(string[] args)
+        {
+
+            //*********Instantiating the delegate**********
+
+            Func<int,float,double,double> obj1 =(x,y,z) =>// Func takes 16 Inputs and 1 output for returning 
+            {
+                return (x + y + z);
+                
+            };
+            double result = obj1.Invoke(20, 4.123f, 4567.897676);//Delegate in my method----new variable to store my value-----return type
+            Console.WriteLine(result);
+
+            Func< double, float, double ,double> obj2 = (x,y,z) => // Func--return Type-- takes 16 Inputs and 1 output for returning 
+           {
+                return (x - y - z);
+               
+            };
+            double result1 = obj2.Invoke(1234567.23456789, 4.142f, 123.4567); 
+            Console.WriteLine(result1);
+
+
+            Action<int,float,double> obj3 = (x,y,z) =>// No return Type--so no output it take 16 Inputs
+ 
+            {
+                Console.WriteLine(x + y + z);//// non-return type
+
+            };
+            obj3.Invoke(10, 3.142f, 12345.12345678);
+            // Console.WriteLine();
+
+
+            Action<int,float, float> obj4  = (x,y,z) =>  No return Type--so no output it take 16 Inputs
+
+            {
+                Console.WriteLine(x * y * z);//non-return type
+
+            };
+
+            obj4.Invoke(50, 34.21f, 20.05f);
+            //Console.WriteLine();
+
+            Predicate<string> obj5 =(name) =>//Consists of only 1 input
+           
+            {
+
+                //Check the string whose length is greater than 4 should print true else false
+                if (name.Length > 4)
+                    return true;
+                return false;
+            };
+
+            bool check = obj5.Invoke("Aditi");//---Bool type 
+            Console.WriteLine(check);
+
+            Predicate<string> obj6 = (str) => //Consists of only 1 input
+           
+            
+            {
+                return str.Equals(str.ToUpper()); ;
+            };
+            bool check2 = obj6.Invoke("Hello World"); //Bool type
+            Console.WriteLine(check2);
+
+            Console.ReadKey();
+
+
+
+        }
+    }
+}
+
+
+
+

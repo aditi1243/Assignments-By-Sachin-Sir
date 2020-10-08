@@ -1,6 +1,6 @@
 
 
-                     ******************Implementation of Delegate*********************
+                     ****************************  Implementation of Delegate   ********************************
 
 using System;
 using System.Collections.Generic;
@@ -119,7 +119,7 @@ namespace Delegate
 
 
 
-          *********************Implementation of Anonymous**********************************
+          *******************************  Implementation of Anonymous   ***********************************************
 
 
 using System;
@@ -213,7 +213,7 @@ namespace Anonymous
 
 
 
-     ****************************************Implementation of Lambda***************************************
+     ****************************************  Implementation of Lambda    **********8***************************************
 
 using System;
 using System.Collections.Generic;
@@ -306,7 +306,7 @@ namespace Lambda
 
 
 
-       **************************Applying -Func,Action,Predicate***************************
+       ***************************        Applying -Func,Action,Predicate    ***********************8***********************
 
 
 using System;

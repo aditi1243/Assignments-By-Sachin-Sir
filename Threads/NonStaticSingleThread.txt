@@ -1,0 +1,52 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace Csharp_single_thread
+{
+    class SingleThreadModule
+    {
+        public  string Thread1(string str)
+        {
+                return "Thread1 is Started";
+        }
+        public int Thread2(int var)
+        {
+            for(int i=1; i<15; i++)
+            {
+                if (i==2)
+                {
+                    Console.WriteLine("Thread 2 is sleeping");
+                    Thread.Sleep(12000);
+                }
+                Console.WriteLine("The thread is at the position :" + i);
+            }
+            return var;
+            
+        }
+        public string Thread3(string str1)
+        {
+            if(str1.Length > 3)
+            {
+                Console.WriteLine("The thread is sleeping");
+                Thread.Sleep(10000);
+            }
+            return "Thread3 is started";
+        }
+        static void Main(string[] args)
+        {
+            SingleThreadModule sm = new SingleThreadModule();
+            string result = sm.Thread1("Hellllo World");
+            Console.WriteLine(result);
+            int a = sm.Thread2(100);
+            Console.WriteLine(a);
+            string s = sm.Thread3("Task Completed");
+            Console.WriteLine(s2);
+            Console.ReadLine();
+        }
+    }
+}

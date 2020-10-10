@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+
+namespace Mutex
+{
+    class Program
+	{
+	    static void Main(string[] args)
+	{
+	    int counter = 0;
+	    
+	//create the Mutex 
+	Mutex _m = new Mutex(false,"syncCounter");
+
+	//create the Threads T1 , and T2
+
+	Thread T1 = new Thread(() =>
+	{
+	  for (int i =0; i<10000000000; i++)
+	{ 
+	  _m.WaitOne();//Taking the Mutex
+	 counter++;
+	_m.ReleasedMutex(); //Releasing the Mutex for other threads
+	}
+	});
+
+	Thread T2 = new Thread(() =>
+	{
+	  for (int i =0; i<10000000000; i++)
+	{ 
+	  _m.WaitOne();//Taking the Mutex
+	 counter++;
+	_m.ReleasedMutex(); //Releasing the Mutex for other threads
+	}
+	});
+
+	//Start the Threads
+	T1.Start();
+	T2.Start();
+
+	//wait until they finish
+	T1.Join();
+	T2.Join();
+
+	//Printing the results of Counter
+	Console.WriteLine(counter);
+	Console.ReadLine();
+	}
+   }
+}
+
+
+	
+
+
+	  

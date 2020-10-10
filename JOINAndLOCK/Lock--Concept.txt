@@ -1,0 +1,30 @@
+
+
+               ***********LOCK**************
+
+using System;
+using System.Threading;
+
+class LockThread{
+	
+	public void Display(){ Or--//public string void Display(string name)
+	lock (This){
+	Console.WriteLine("CSharp is an");
+	Thread.Sleep(5000);
+	Console.WriteLine("Object Oriented Programming language");
+	}
+	}
+	}
+	
+	staic void Main(string[] args){
+		
+	 
+	LockThread object = new Lockthread();\
+	Thread T1 = new Thread(object.Display);//Instantiated the thread with Method Reference
+	Thread T2 = new Thread(object.Display);
+	T1.Start();T2.Start();	
+	//object.display(); 
+	//object.display(); 
+	//object.display(); 
+	}
+	}

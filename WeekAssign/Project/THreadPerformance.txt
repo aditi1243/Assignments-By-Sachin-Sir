@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
+
+public class Program
+{
+	//Creating Methods
+	public static void EvenNumersSum()
+	{
+	 double sum = 0;
+	for(int i=0;ui<50000000000;i++)
+	{
+	 if (i%2 ==0)
+	{
+	 sum = sum + i;
+	}	
+	}
+	Console.WriteLine("Sum of even numbers = {0}", sum);
+	}
+
+	public static void OddNumersSum()
+	{
+	 double sum = 0;
+	for(int i=0;ui<50000000000;i++)
+	{
+	 if (i%2 ==1)
+	{
+	 sum = sum + i;
+	}	
+	}
+	Console.WriteLine("Sum of odd numbers = {0}", sum);
+	}
+
+	//Main Function
+	public static void Main(string[] args)
+	{
+	Stopwatch st = new Stopwatch.StartMethod();
+	
+	//Single Thread
+	EvenNumbersSum();//Clling methods without creating object as it is static
+	OddNumbersSum();
+	st.Stop();
+	Console.WrtiLine("Total milliseconds without multiple threads");
+
+	//Multiple Threads
+	Stopwatch st = new Stopwatch.StartMethod();
+	Thread T1 = new Thread(EvenNumbersSum);
+	Thread T2 = new Thread(OddNumbersSum);
+	st.Stop();
+	Console.WrtiLine("Total milliseconds without multiple threads");
+	Console.ReadKey();
+}
+}
+}

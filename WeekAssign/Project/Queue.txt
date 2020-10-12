@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QueuePrac
+{
+    class Queue
+{
+	 static void Main(string[] args)
+        {
+            Queue<string> Myqueue = new Queue<string>();
+	    
+            Myqueue.Enqueue("Start of the stack");
+
+            Myqueue.Enqueue(12);
+
+            Myqueue.Enqueue(14);
+	
+            Myqueue.Enqueue("Hi");
+
+            Myqueue.Enqueue(28);
+
+            Myqueue.Enqueue("End of the stack");
+	
+            Console.WriteLine("the topmost element of the stack is {0} ", Myqueue.Peek());
+
+            foreach (int var in Myqueue)
+            {
+                Console.WriteLine("elements are in queue are" + var);
+	    }
+	    Console.WriteLine("Removing 2 pop oprations");
+            Console.WriteLine("the elements after popping" + Myqueue.Dequeue());
+            Console.WriteLine("the elements after popping" + Myqueue.Dequeue());
+
+	    Console.WriteLine("pushing here!!!!!");
+             Myqueue.Enqueue(1);
+	 
+	    foreach (int var in Myqueue)
+            {
+                Console.WriteLine("elements are in queue are" + var);
+
+
+            }
+	   Console.ReadLine();
+      }
+  }
+}
+            
+	
+
+		

@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FuncActPred
+{
+    //Defined the delegates with respect to the methods defined below
+    public delegate double DivisonDelegate(int x,int y);
+    public delegate void CubeDelegate(float a);
+    public delegate bool myStringDelegate(string str);
+	
+   class Program
+	{
+	//Main Function
+	
+        static void Main(string[] args)
+        {
+
+            //*********Instantiating the delegate**********
+
+            Func<int,int,double> obj1 =(x,y) =>// Func takes 16 Inputs and 1 output for returning 
+            {
+                return (x / y);
+                
+            };	double result = obj1.Invoke(45,9);
+	    Console.WriteLine(result);
+	
+            Action<float> obj2 = (a) =>// No return Type--so no output it take 16 Inputs
+ 
+            {
+                Console.WriteLine(a * a * a);//// non-return type
+
+            };
+            obj3.Invoke(3.142f);
+            Console.WriteLine();
+	Predicate<string> obj3 = (str) =>
+	{
+	 if (mystring.Length < 7) 
+        { 
+            return true; 
+        } 
+        else 
+        { 
+            return false; 
+        } 
+    } 
+	bool check = obj4.Invoke("Adventurous");
+	Console.WriteLine(check);
+	Console.Readkey();
+	}
+	}
+	}
+
+

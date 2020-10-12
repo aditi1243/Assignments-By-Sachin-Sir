@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Stack
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        
+            Stack st = new Stack();
+            st.Push("Start of the Stack);
+            st.Push(4);
+	    st.Push(5);
+	    st.Push("End of the stack");
+	  Console.WriteLine("the topmost element of the stack is {0} ", st.Peek());
+
+            foreach (int var in MyStack)
+            {
+                Console.WriteLine("elements are in stack are" + var);
+
+
+            }
+            Console.WriteLine("Removing 2 pop oprations");
+            Console.WriteLine("the elements after popping" + st.Pop()); 
+            Console.WriteLine("the elements after popping" + st.Pop());
+	      Console.ReadKey();
+	}
+    }	
+}	
+        

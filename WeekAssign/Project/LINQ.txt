@@ -1,0 +1,39 @@
+/
+ 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 500, 344, 221, 4443, 229, 1008, 6000, 767, 256, 0 };
+        
+	// Program to Display the Greatest numbers in an Array using WHERE Clause LINQ
+	var greaterNums =
+            from num in numbers
+            where num > 500
+            select num;
+        Console.WriteLine("Numbers Greater than 500 :");
+        foreach (var s in greaterNums)
+        {
+            Console.Write(s.ToString() + " ");
+        }
+
+	// Program to Display the Smallest numbers in an Array using WHERE Clause LINQ
+	 var program = from num in numbers
+                          where num < 500
+                          select num;
+            Console.WriteLine("Numbers less than 50 are :");
+            foreach (int i in program)
+            {
+                Console.Write(i + " ");
+            }
+            Console.ReadLine();
+
+        Console.Read();
+    }
+}

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Use of Selectors</title>
+    <script type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        //Element Selector
+        $(document).ready(function () {
+            $("button").dblclick(function () {
+                $("pre").hide();
+            });
+
+        });
+
+        //#id Selector
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#Example").hide();
+            });
+        });
+
+        //.class Selector
+        $(document).ready(function () {
+            $("button").dblclick(function () {
+                $(".Example").hide();
+            });
+        });
+
+        //Selecting all Elements with Hide method
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("*").hide();
+            });
+        });
+
+        //Selecting all Elements with SDhow Method
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("*").hide();
+            });
+        });
+
+        //Selecting Current element
+        $(document).ready(function () {
+            $("button").click(function () {
+                $(this).hide();
+            });
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>This is a DotNet Training</h1>
+    <pre>Dotnet Training consists of 24 students 
+        All the 24 students are very brilliant
+
+</pre>
+    <p>We are crazy!!!!!!!!!!!</p>
+    <p id="Example">This is a paragraph</p>
+    <button>Click me to hide the para</button>
+    <p class="Example">DotNet is a platform to develop Console app</p>
+    <button>Click Click Click</button>
+</body>
+</html>

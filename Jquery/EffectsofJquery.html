@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Effects of jQuery</title>
+
+    <script type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        //ToggleMethod
+        $(document).ready(function () {//The jQuery toggle() is a special type of method which is used to toggle between the hide() and show() method. It shows the hidden elements and hides the shown element.
+            $("button").click(function () {
+                $("div.d1").toggle(1500);
+            });
+        }); 
+
+        //Hide and Show
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("p").hide();
+            });
+            $("#show").click(function () {
+                $("p").show();
+            });
+        });
+
+        //FadeIn and fadeOut
+        $(document).ready(function () {
+        $("button").click(function () {
+   
+            $("#div1").fadeIn("slow");
+            $("#div2").fadeOut(3000);
+        });
+        });
+
+        //Slidings
+        $(document).ready(function () {
+            $("flip").click(function () {
+                $("flop".slideDown();
+            });
+            $("#stop").click(function () {
+                $("#flop").stop();
+            });
+        });
+
+        <style>
+            #flop, #flip{
+                padding:5px;
+            text-align:center;
+            background-color:#e5eecc;
+            border: solid lpx #c3c3c3;
+        }
+       </style>
+   
+   
+    </script>
+
+</head>
+<body>
+    <button>Toggle</button>
+    <div class=" d1" style="border:1px solid
+    black;padding:10px;width:250px">
+        <p>
+            <b>Angel Song :</b><br />
+            Angels we have heard on high<br />
+            sweetly singing over the plains<br />
+        </p>
+
+    </div>
+
+    <p>Click Me</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+
+    <p>Demonstration fadeIn()</p>
+    <button>Click For fading of the boxes</button>
+    <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:yellow;"></div><br>
+
+
+    <button id="stop">Stop sliding</button>
+    <div id="flip">Click to slide down panel</div>
+    <div id="panel">Hello world!</div>
+
+
+</body>
+</html>

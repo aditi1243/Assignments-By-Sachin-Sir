@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Basic JQuery</title>
+    <script type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+        <script>
+            $(function () {
+                $("button").click(function () {
+                    $("#x").hide();
+                    $(".y").hide();
+                });
+            });
+            $(document).ready(function () {
+                $("button").click(function () {
+                    $("h1").hide();
+                });
+            });
+            $(function () {
+                $("h2").hide();
+            });
+
+            $(function () {
+                    $("button").click(function () {
+                        $("#x").hide();
+                        $(".y").hide();
+                    });
+            });
+    
+    
+        </script>    
+
+    
+</head>
+<body>
+    <h1>this is h1</h1>
+    <h1 id="x">this is h1</h1>
+    <h2 class=" y">this is h2</h2>
+    <h2>this is h2</h2>
+
+    <button>click me to change</button>
+    <button>show</button>
+</body>
+</html>

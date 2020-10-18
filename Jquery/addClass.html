@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .hid {
+            color: yellow;
+            width: 200px;
+            height: 100px;
+            border: 1px solid yellow;
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("h1,p").addClass("hid");
+            });
+            $("#btn2").click(function () {
+                $("h1,p").removeClass("hid");
+            });
+
+        });
+    </script>
+    <h1>Hello Good Morning</h1>
+    <p>This is one paragraph</p>
+    <button id="btn1">add class</button>
+    <button id="btn2">remove class</button>
+
+</body>
+</html>

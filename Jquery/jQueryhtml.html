@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        //Get Properties
+        $(document).ready(function () {
+            $(".btn-one").click(function () {
+                var str = $("p").text();
+                alert(str);
+            });
+
+           //Set Properties
+            $(document).ready(function () {
+                $(".btn-two").click(function () {
+                    $("p").text("This is demo text.");
+                });
+
+            });
+
+            //Append and Prepend
+            $(document).ready(function () {
+                $("#button").click(function () {
+                    $("pre").append("<b>Text got Appended</b>. ");
+                });
+            });
+            $(document).ready(function () {
+                $("#button1").click(function () {
+                    $("pre").prepend("<b>Text got Prepended </b>. ");
+                });
+            });
+
+            //Before and After
+            $(document).ready(function () {
+                $("button").click(function () {
+                    $("p").before("<pre><b>Hello Everyone!!!!!!!!</b></pre>");
+                });
+            }); 
+
+            $(document).ready(function () {
+                $("button").click(function () {
+                    $("p").after("<pre><b>Hello Good Evening</b></pre>");
+                });
+            }); 
+
+            //Remove
+            $(document).ready(function () {
+                $("button").click(function () {
+                    $("p").remove();
+                });
+            });  
+
+             
+
+
+
+    </script>
+
+</head>
+<body>
+    <button type="button" class="btn-one">Get All Paragraph's Text</button>
+    <button type="button" class="btn-two">Set First Paragraph's Text</button>
+    <p>This is a paragraph.</p>
+
+    <pre>This paragraph tells about our great Freedom Fighters
+          Who fought against the Britishers to make our country depended.
+</pre>
+    <button id="button">Append Text</button>
+    <button id="buton1">Prepend Text</button>
+
+    <button>Insert contents before pre elements</button>
+    <button>Contents inserted after p elements</button>
+    <button>Click here for removing method</button>
+
+</body>
+</html>

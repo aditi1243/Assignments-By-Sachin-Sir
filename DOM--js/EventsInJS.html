@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Events</title>
+</head>
+<body>
+    <centre>
+        <img src=(@ :"C:\Users\asingh821\OneDrive - DXC Production\Desktop\DOM-JS")
+             id="imgid">
+        <p id="pid"></p>
+    </centre>
+    <script>
+
+        //OnClick Event
+        function myfunc() {
+            alert("Hello Welcome to the Programming World");
+        }
+
+        //OnLoad Event
+        function myfunc1() {
+            document.getElementById("pid").innerHTML =
+                "Image loaded";
+        }
+
+        //onchange Event
+        function myfunc2() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("demo").innerHTML = "You selected: " + x;
+        }
+        //Onfocus Event
+        function myfunc3(x) {
+            x.style.background = "red";
+        }
+        //onmouseover Event
+        function extraevent(color) {
+            color.innerHTML = "This IS crazy";
+        }
+        //onmouseout
+        function extraevent2(color) {
+            color.innerHTML = "Mouse over me";
+        }
+        //onmousedown and onmouseup
+        function mouseDown() {
+            document.getElementById("SmackThat").style.color = "yellow";
+        }
+
+        function mouseUp() {
+            document.getElementById("SmackThat").style.color = "green";
+        }
+
+    </script>
+
+    <button type="button" onclick="myfunc()">Click me event</button>
+
+    <p>Select a new car from the list.</p>
+
+    <select id="mySelect" onchange="myfunc2()">
+        <option value="Audi">Audi
+        <option value="BMW">BMW
+        <option value="Mercedes">Mercedes
+    </select>
+
+    Enter your name: <input type="text" onfocus="myfunc3(this)">
+
+    <div onmouseover="extraevent(this)" onmouseout="extraevent2(This)">
+        style = "background-color:cyan; width=150px ;height=100px; padding :50px ;font-size:30px"> Show me up
+    </div>
+
+    <pre id="SmackThat" onmousedown="mouseDown()" onmouseup="mouseUp()">
+        Smack that all on the floor!!!!!!!!
+        Smack that give me some more Smack that!!!!!!
+        Ohhh Ohhhhoooo ohhhoooo Smack that
+           </pre>    
+
+
+</body>
+</html>

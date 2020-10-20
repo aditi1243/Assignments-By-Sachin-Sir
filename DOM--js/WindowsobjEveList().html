@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Demonstration of Windows Object in EventListenerMethod</title>
+</head>
+<body>
+    <p>Click the button to perform mathematics opeartion below</p>
+
+    <button id="mybtn1">Addition</button>
+
+    <button id="mybtn2">Substraction</button>
+
+    <button id="mybtn3">Multiplication</button>
+
+    <button id="mybtn4">Division</button>
+
+    <p id=" demo"></p>
+
+    <p>Try resizing this browser window by the "resize" event handler.</p>
+
+    <p id="text"></p>
+
+
+
+    <script>
+
+        var x = 10;
+        var y = 20;
+
+        document.getElementById("mybtn1").addEventListener("click", function () {
+            addition(x, y);
+        });
+        document.getElementById("mybtn2").addEventListener("click", function () {
+            substraction(x, y);
+        });
+
+        document.getElementById("mybtn3").addEventListener("click", function () {
+            multiplication(x, y);
+        });
+        document.getElementById("mybtn4").addEventListener("click", function () {
+            division(x, y);
+        });
+
+
+
+        //Addition Method
+        function addition(a, b) {
+            var result = a + b;
+            document.getElementById("demo").innerHTML = result;
+        }
+
+        //Substraction Method
+        function substraction(a, b) {
+            var result = a - b;
+            document.getElementById("demo").innerHTML = result1;
+        }
+
+        //Multiplication
+        function multiplication(a, b) {
+            var result = a * b;
+            document.getElementById("demo").innerHTML = result2;
+        }
+
+        //Division
+        function division(a, b) {
+            var result = a / b;
+            document.getElementById("demo").innerHTML = result4;
+        }
+
+    </script>
+    <script>
+        window.addEventListener("reload", function () {
+            document.getElementById("demo").innerHTML = HTMLTimeElement();
+
+            window.addEventListener("resize", () => {
+                document.getElementById("text").innerHTML = Math.random();
+            });
+
+    </script>
+
+</body>
+</html>

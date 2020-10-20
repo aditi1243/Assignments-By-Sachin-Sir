@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Calling Multiple events on  a single Click of a Button</title>
+</head> 
+<body>
+    <button type="button" id="myBtn">Click Me</button>
+     
+    <script>
+    // Defining functions
+    
+	function sayHello(){
+        alert("This is my world and my first function executed successfully!");
+    }
+     
+    function sayHi(){
+        alert("This is my Universe and second function executed successfully!");
+    }
+     
+    // Selecting button element
+    var btn = document.getElementById("myBtn");
+     
+    // Assigning event listeners to the button
+    btn.addEventListener("click", sayHello);
+    btn.addEventListener("click", sayHi);
+    </script>
+</body>
+</html>

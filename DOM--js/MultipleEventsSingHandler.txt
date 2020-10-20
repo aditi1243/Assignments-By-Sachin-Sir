@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Multiple events over a single event handler</title>
+</head> 
+<body>
+<script>
+<style>
+	#theStuff{
+	padding: 50px;
+	background-color: #FFF;
+	font-family: sans-serif;
+	}
+	button {
+	padding : 15px;
+	font-size: 24px;
+	margin: 15px;
+	border: 5px solid #333;
+	border-radius:5px;
+	}
+	#one{
+	background-color: #EDE580;
+	}
+	#two{
+	background-color: #FF637F;
+	}
+	#three{
+	background-color: #87F5fB;
+	}
+	#four{
+	background-color: #EDE580;
+	}
+	</style>
+
+	var theParent =document.querySelector("#theStuff");
+	thePraent.addEventListener("click",doSomething);
+		
+	function doSomething(e){
+	if(e.target!==e.currentTarget){
+	var clickedItem=e.target.id;
+	alert("Helllloooooo" + clickeditem);
+	}
+	}
+	</script>
+	</body>
+	</html>
+	
+
+
+
+

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Complete JSON</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var data = {
+            "name": "Aditi Raghuvanshi",//String type
+            "number": 30,//number Type
+            "color": ["red", "orange", "yellow"],//array type
+            "condition": true,//Boolean Type
+            "friends": {
+                "Prayagraj": "Anu",
+                "delhi": "Divyanshi",
+                "Banglore": "Aakansha"
+            }
+        };
+        var obj = {
+            "name": "Aditi",
+            "age": 21,
+            "Height": 5.4,
+            "Weight": 56,
+        };
+        var obj1 = {
+            "hobbies": ["Tourism", "Chess", "Badminton"]
+        };
+        var obj2 ='{"id": 101, "name": "Aish", "age": 24}';
+
+        var obj3 = {
+            "firstName": "Aditi",
+            "lastName" : "Raghuvanshi"
+        }
+
+            
+         document.write(data.name + '    ');
+         document.write(data.number + '   ');
+         document.write(data.color[1] + '    ');
+         document.write(data.condition + '    ');
+         document.write(data.friends.delhi + '    ');
+ 
+         document.write(JSON.stringify(obj));//JSON.Strigify() converts a Javascript object into a string 
+         document.write(JSON.stringify(obj1));
+ 
+         var json_object = JSON.parse(obj2);//parse the data with JSON.parse(),and the data becomes JS object
+         document.write(json_object.id);//Parse() convers string into onject
+ 
+         var output = document.getElementById('output');
+         output.innerHTML = obj3.firstName + ' ' + obj3.lastName;
+ 
+    </script>
+
+</body>
+</html>

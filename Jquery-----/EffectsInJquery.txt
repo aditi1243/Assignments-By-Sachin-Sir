@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").hide();
+                $("h1").hide();
+                $("h2").hide();
+                $("h3").hide();
+                $(this).hide();
+                $("*").hide();//All the elements will get hide
+                $("p.intro").hide();
+                $("h1.intro").hide();
+
+
+            });
+        });
+        </script>
+    <script>
+
+        //Click Function
+        $(document).ready(function () {
+            $("p").click(function () {//One time runnable event
+                $(this).hide();//The paragraph will hide the <p> tags one by one
+            });
+        });
+        </script>
+
+      <script>
+
+       //dblClick
+        $(document).ready(function () {
+            $("h1").dblclick(function () {
+                $(this).hide();//The paragraph will hide the <p> tags one by one
+            });
+          });
+
+          $(document).ready(function () {
+              $("h2").dblclick(function () {
+                  $(this).hide();
+              });
+          });
+
+          $(document).ready(function () {
+              $("h3").dblclick(function () {
+                  $(this).hide();
+              });
+          });
+
+  </script>
+    <script>
+
+        //For mouseenter event we create id
+       
+	 $(document).ready(function () {
+            $("#aditi").mouseenter(function () {
+                alert("You have selected name as Aditi")
+            });
+        });
+
+` </script>
+  
+    <script>
+     $(document).ready(function () {
+            $("p").mouseenter(function () {
+                alert("You are an idiot")
+            });
+        });
+
+ </script>
+
+     //Mouseleave function
+          <script>
+        $(document).ready(function () {
+            $("#aditi").mouseleave(function () {
+                alert("You are an idiot")
+            });
+        })
+	
+	//mouseup function
+	$(document).ready(function(){
+	 $("#aditi").mouseup(function(){
+		alert("Helllllooo!!! what's upppp")
+	});
+	}0;
+       
+
+
+    </script>
+	//focus and blur functions
+    <script>
+        $(document).ready(function(){
+        $("input").focus(function(){
+        $(this).css("background-color","cyan");
+  });
+
+        $("input").blur(function(){
+    $(this).css("background-color","red");
+   });
+   });
+
+
+    </script>
+
+	//hide, show and Toggle Methods
+	<script>
+
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("p").hide();
+            });
+            $("#show").click(function () {
+                $("p").show();
+            });
+        });
+	 $(document).ready(function () {//The jQuery toggle() is a special type of method which is used to toggle between the hide() and show() method. It shows the hidden elements and hides the shown element.
+            $("button").click(function () {
+                $("div.d1").toggle(1500);
+            });
+        }); 
+
+	//Fade
+        $(document).ready(function () {
+        $("button").click(function () {
+   
+            $("#div1").fadeIn("slow");//Fades in the selected elements
+            $("#div2").fadeOut(3000);//	Fades out the selected elements
+	    $("#div2").fadeToggle(3000);//	Toggles between the fadeIn() and fadeOut() methods
+	    $("#div2").fadeTo();//Fades in/out the selected elements to a given opacity
+        });
+        });
+
+	//animate funct
+	<script> 
+	  $(document).ready(function(){
+             $("button").click(function(){
+               $("div").animate({left: '250px'});
+  });
+});
+</script> 
+
+    
+    
+   
+
+</head>
+<body>
+    <p class="intro">this is an example of Jquery implementation on Hide ().</p>
+    <p>Hello To the World From Jquery JS Library</p>
+
+    <h1 class="intro">this is an example of Jquery implementation on Hide ().</h1>
+    <h1>this is an example of Jquery implementation on Hide ().</h1>
+    <h2 class="intro">this is an example of Jquery implementation on Hide ().</h2>
+    <h3>this is an example of Jquery implementation on Hide ().</h3>
+
+    <p>If you click me,I will disappear</p>
+    <p>Click me too I too Disappear</p>
+    <p>Click me also I too wanna disappear</p>
+
+    <h1>If you Doubleclick me,I will disappear</h1>
+    <h2>DoubleClick me too I too Disappear</h2>
+    <h3>DoubleClick me also I too wanna disappear</h3>
+   
+    
+    <p id=" Aditi">My name Is Aditi</p>
+    <p>Take mouse here</p>
+    <h1 class="idiot">This is para</h1>
+
+    <p id="Aditi">Check with your mouse</p>
+
+    Name: <input type="text" name="FullName" >
+    
+    
+    <button>Click me</button>
+    <button>Click it</button>
+
+	dy>
+    <button>Toggle</button>
+    <div class=" d1" style="border:1px solid
+    black;padding:10px;width:250px">
+        <p>
+            <b>Angel Song :</b><br />
+            Angels we have heard on high<br />
+            sweetly singing over the plains<br />
+        </p>
+
+    </div>
+
+    <p>Click Me</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+
+	<p>Demonstration fadeIn()</p>
+    <button>Click For fading of the boxes</button>
+    <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:yellow;"></div><br>
+
+	
+	
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+
+</body>
+
+</html>

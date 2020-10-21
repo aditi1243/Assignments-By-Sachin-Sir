@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .hid {
+            color: yellow;
+            width: 200px;
+            height: 100px;
+            border: 1px solid yellow;
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        //Adding and removing classes
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("h1,p").addClass("hid");
+            });
+            $("#btn2").click(function () {
+                $("h1,p").removeClass("hid");
+            });
+
+        });
+    </script>
+    <script>
+        //Get Methods------text()
+
+        $(document).ready(function () {
+            $("#btn3").click(function () {
+                console.log($("#test").text());//Text() gives all the method within the paragraph tag
+            });
+        });
+
+        //html()----------
+        $(document).ready(function () {
+            $("#btn4").click(function () {
+                console.log($("#test").html());//Sets or returns the content of selected elements (including HTML markup)
+            });
+        });
+
+        //val()----------
+        $(document).ready(function () {
+            $("#btn5").click(function () {
+                console.log($("#test").val());// val() sets or returns the value of form fields
+                console.log($("#fcc").attr("href"));
+            });
+        });
+    </script>
+    <script>
+        //Set methods------------text
+        $(document).ready(function () {
+            $("#btn6").click(function () {
+                console.log($("#test1").text("I am intelligent!!!!!!"));//  Sets or returns the text content of selected elements
+
+            });
+        });
+
+        //html()---------
+        $(document).ready(function () {
+            $("#btn6").click(function () {
+                console.log($("#test2").text("I am intelligent!!!!!! </b>"));//Sets or returns the content of selected elements (including HTML markup)
+
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btn7").click(function () {
+                console.log($("#name").val("aaaaditiiii"));//Sets or returns the content of selected elements (including HTML markup)
+
+            });
+        });
+
+
+
+
+    </script>
+    <h1>Hello Good Morning</h1>
+    <p>This is one paragraph</p>
+    <button id="btn1">add class</button>
+    <button id="btn2">remove class</button>
+
+    <p id="test">If you have P you will be P <a href="https://freecodecamp.org" id="fcc">freeCodeCamp</a></p>
+    <button id="btn3">Show content</button>
+    <button id="btn4">Show content</button>
+    <button id="btn5">Show content</button>
+
+    <button id="btn6">Show content</button>
+    <p id="test1">You are an idiot.</p>
+    <p id="test2">Albert Einstien</p>
+    <p>Name: <input type="text" id="name" value="Aditi raghuvanshi" /></p>
+    <button id="btn7">Show content</button>
+
+</body>
+</html>

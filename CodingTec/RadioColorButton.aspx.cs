@@ -16,12 +16,7 @@ namespace Controls_____
 
         protected void Label1_Click(object sender, EventArgs e)
         {
-            colorid.Text = "";
-            if (Radiobutton1.Checked)
-                colorid.Text = "This is ASP.Net Webform" + Radiobutton1.Text;
-
-            else
-                colorid.Text = "This is ASP.Net Webform" + Radiobutton2.Text;
+           
         }
 
 

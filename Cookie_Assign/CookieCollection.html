@@ -1,0 +1,85 @@
+<%@ Page Language="C#" AutoEventWireup="true" HttpCookie.aspx.cs" Inherits="DataListTable.DataLis___" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+	<table border="1">
+	   <tr>
+		<td>Name</td>
+		<td>input type="text" id="textName"/></td>
+	   </tr>
+	<tr>
+		<td>Email</td>
+		<td>input type="text" id="txtEmail"/></td>
+	   </tr>	       
+
+	<tr>
+		<td>Gender</td>
+		<td>input type="text" id="txtGender"/></td>
+	   </tr>
+	<tr>
+	    <td colspan="2">
+	       <input type="button" value="Set Cookie" onclick="setCookie()"/>	       
+	       <input type="button" value="Get Cookie" onclick="getCookie()"/>
+	      <input type="button" value="Clear" onclick="clearTextBoxes()" />
+         </td>
+	</tr>
+	</table>
+	<script type="text/javascript">
+	
+	//For Setting Cookie  
+	function setCookie(){
+
+		var customObject={};
+		customObject.name=document.getElementById("txtName").value;//Dynamic properties which we want to store
+		customObject.email=document.getElementById("txtEmail").value;
+		customObject.gender=document.getElementById("txtGender").value;
+
+		var jsonString= JSON.stringify(customObject);//Converts JS object to JSON string
+		
+-		document.cookie="cookieObject=" + jsonString;//Arrayindexes at [0]-cookieObject and at [1]- jsonString
+
+		//var cookieString="name=" + document.getElementsById("txtName").value +
+		//		  ";email=" + document.getElementsById("txtEmail").value +
+		//		   ";gender=" + document.getElementsById("txtGender").value +
+
+		
+	}
+	
+	//For Getting Cookie
+	function getCookie(){
+	  // alert(document.cookie);//We can store only one single key-value pair in a cookie
+	var nameValueArray=document.cookie.split("=");	//This array will contain two strings one cookieObject and other jsonString, and we split the string using "=" separator
+	var customObject=JSON.parse(nameValueArray[1]);It parse the jsonString and return corresponding our objects  
+	
+		
+	document.getElementById("txtName").value=customObject.name;
+	document.getElementById("txtEmail").value=customObject.email;
+	document.getElementById("txtGender").value=customObject.;
+
+
+
+	}
+	
+	//For ClearingTextBoxes
+ 	function clearTextBoxes(){
+	    document.getElementById("txtName").value="";
+	    document.getElementById("txtEmail").value="";
+	    document.getElementById("txtGender").value="";
+
+		</script>
+		</body>
+	</html>
+
+
+
+
+
+	 
+	
+	

@@ -1,0 +1,80 @@
+        ****************************DATALIST.aspx*********************************
+
+
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DtaList1.aspx.cs" Inherits="Assign_DataList.DtaList1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Demonstration of DataList </title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <p> The DataList data of the DataTable </p>
+        <div>
+            <asp:DataList ID="DataList1" runat="server">
+                <ItemTemplate>
+                    <asp:Table ID="Table1" runat="server" CellPadding="2" CellSpacing="0" Border="1" BorderStyle="Dashed" style="width:250px; height:100px;background-color:ForestGreen" />
+                    <tr>
+                        <td style="color:orange">
+                            <strong> FirstName : </strong> <span> <%#Eval("FirstName :") %></span><br />
+                            <strong> LastName : </strong> <span> <%# Eval("LastName :") %></span><br />
+                            <strong> Designation : </strong> <span> <%# Eval("Designation :") %></span><br />
+                            <strong> Location : </strong> <span> <%# Eval("Location :") %></span><br />
+                            <strong> Country : </strong> <span> <%# Eval("Country :") %></span><br />
+                        </td>
+                    </tr>
+                </ItemTemplate>
+            </asp:DataList>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+     *********************************DATALIST.aspx.cs**************************************
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+
+namespace DataList
+{
+    public partial class DtaList1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            DataTable Table = new DataTable(); //Created an instance
+            Table.Columns.Add("FirstName :");
+            Table.Columns.Add("LastName :");
+            Table.Columns.Add("Designation :");
+            Table.Columns.Add("Location :");
+            Table.Columns.Add("Country :");
+
+            Table.Rows.Add("Aditi", "Raghuvanshi", "AssociateProfessional", "Allahabd", "India");
+            Table.Rows.Add("Aishwarya", "Agarwal", "HR", "Bangalore", "India");
+            Table.Rows.Add("Arti", "Srivastava", "Manager", "Ahemdabad", "India");
+            Table.Rows.Add("Priscilla", "Thota", "SeniorManager", "Pune", "India");
+            Table.Rows.Add("Akriti", "Goel", "DBA", "Delhi", "India");
+            Table.Rows.Add("Akansha", "Rishivanshi", "MarketingOfficer", "Kanpur", "India");
+            Table.Rows.Add("Ankita", "Suhel", "FinanceManager", "Lucknow", "India");
+            Table.Rows.Add("Riya", "Tripathi", "AccountingManager", "Ajmer", "India");
+            Table.Rows.Add("Divya", "Singh", "HR", "Chennai", "India");
+            Table.Rows.Add("Deepanshi", "Raghuvanshi", "ExecutiveOfficer", "MySore", "India");
+
+
+            DataList1.DataSource = Table;
+            DataList1.DataBind();
+        }
+    }
+}

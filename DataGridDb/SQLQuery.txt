@@ -1,0 +1,71 @@
+use [Dxc Training]
+
+create table Student1(
+std_id int not null Primary Key,
+f_name varchar(100),
+l_name varchar(100),
+location varchar(100)
+)
+
+create table Employee2(
+emp_id int not null Primary Key,
+emp_name varchar(100),
+designation varchar(100),
+location varchar(100)
+)
+
+create table IndianCricketTeam(
+jersey_no int identity(1,1) Primary Key,
+f_name varchar(100),
+l_name varchar(100),
+no_of_centuries int
+)
+
+create table IndianRailSys(
+train_no int not null Primary Key,
+train_name varchar(100),
+source varchar(100),
+destination varchar(100),
+arrival time(7) NOT NULL,
+)
+
+
+create table Bank(
+emp_id int identity(1,1) Primary Key,
+emp_f_name varchar(100),
+dept_name varchar(100),
+location varchar(100)
+)
+
+insert into Student1 values(101,'Aditi','Raghuvanshi','Allahabad');
+insert into Student1 values(102,'Jacklin','Fernandis','Banglore');
+insert into Student1 values(103,'Shakuntala','Devi','Pune');
+insert into Student1 values(104,'J.K','Rowling','Dubai');
+select * from Student1
+
+insert into Employee2 values(101,'Taylor Swift','HR','Ahemdabad');
+insert into Employee2 values(102,'Justin Bieber','Technical Content Writer','Vishakapatnam');
+insert into Employee2 values(103,'Rihanna','Software Developer','Noida');
+insert into Employee2 values(104,'Madonna','Manager','Delhi');
+select * from Employee2
+
+insert into IndianCricketTeam values('Sachin','Tendulkar',51);
+insert into IndianCricketTeam values('Rahul','Dravid',36);
+insert into IndianCricketTeam values('M.S','Dhoni',33);
+insert into IndianCricketTeam values('Virat','Kholi',70);
+select * from IndianCricketTeam
+
+insert into IndianRailSys values(12009,'Shatabdi Express','Mumbai',' Ahmedabad ','13:10:00');
+insert into IndianRailSys values(12431,'Rajdhani Express','Trivandrum','Trivandrum','12:40:006');
+insert into IndianRailSys values(12418,'Prayagraj Express','Allahabd','New delhi','21:20:00');
+insert into IndianRailSys values(12246,'Duronto Express','Yesvantpur','Howrah','16:45:00');
+
+select * from IndianRailSys
+
+insert into Bank values('Akansha Agarwal','Lines of credit.','Allahabad');
+insert into Bank values('Aditi Raghuvanshi','Insurance.','Banglore');
+insert into Bank values('Deepanshi Raghuvanshi','Risk Management Dept','Pune');
+insert into Bank values('Akriti Srivastava','Inspection Dept','Hyderabd');
+select * from Bank
+
+

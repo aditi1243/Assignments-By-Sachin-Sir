@@ -1,0 +1,99 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<div>
+<!-- Single statement block -->
+@{ var myMessage = "Hello World"; }
+</div>
+
+<div>
+<!-- Multi-statement block -->
+@{
+var greeting = "Welcome to CodeSnipets!";
+var weekDay = DateTime.Now.DayOfWeek;
+var greetingMessage = greeting + " Here in India it is: " + weekDay;
+}
+</div>
+
+//Loop-----
+<div>
+@for(var i = 10; i < 21; i++)
+{
+<p>Statement @i</p>
+}
+</div>
+
+//While Loop------
+<div>
+@{
+var i = 0;
+while (i < 5)
+    {
+    i += 1;
+    <p>Statement @i</p>
+    }
+}
+</div>
+
+//IF ----
+<div>
+@{var cost=50;}
+@if (cost>30)
+  {
+  <p>The cost is too high.</p>
+  }
+</div>
+
+//IF-Else---
+<div>
+@{var cost1=20;}
+@if (cost>30)
+  {
+  <p>The cost is too high.</p>
+  }
+else
+  {
+  <p>The cost is average.</p>
+  }
+</div>
+
+//Switch-case-----
+<div>
+@{
+var message="";
+var weekday=DateTime.Now.DayOfWeek;
+var day=weekday.ToString();
+}
+
+@switch(day)
+{
+case "Monday":
+    message="This is monday.";
+    break;
+case "Thursday":
+    message="This is thursday.";
+    break;
+case "Friday":
+    message="This is friday";
+    break;
+default:
+    message="Today is " + day;
+    break;
+}
+<p>@Weekands are:</p>
+</div>
+    
+  
+
+</body>
+</html>

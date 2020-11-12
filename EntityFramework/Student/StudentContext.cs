@@ -1,0 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Data.Entity;
+
+namespace StudentAssign.Models
+{
+    public class StudentContext :DbContext
+    {
+        public StudentContext() : base("StudentConnection")
+        {
+
+        }
+        public DbSet<Student> StudentTable { get; set; }
+    }
+}

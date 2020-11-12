@@ -1,0 +1,90 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Registration Form</h1>
+        @using (Html.BeginForm("Index", "Registration"))
+        {
+            <table>
+                <tr>
+                    <td>
+                   Username:  @Html.TextBox("textbox1")
+                    </td>
+                </tr>
+                <tr>
+                 <td>
+                   Password:  @Html.Password("password1")
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                        Gender:  
+                        <label>Male</label>@Html.RadioButton("Gender", "Male", true, new { id = "Male" })
+                        <label>Female</label>@Html.RadioButton("Gender", "Female", true, new { id = "Female" })
+                    </td>
+                </tr>
+                <tr>
+                   
+                    <td>
+                       Address:  @Html.TextArea("address",new { cols=30, rows=3 })
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                        Hobbies:
+                        @Html.CheckBox("checkbox1")<label>Travelling</label>
+                        @Html.CheckBox("checkbox2")<label>Reading Novels</label>
+                        @Html.CheckBox("checkbox3")<label>Playing Badminton</label>
+                        @Html.CheckBox("checkbox3")<label>Researching about Space</label>
+
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                        Branch:
+                        @Html.DropDownList("Courses", new List<SelectListItem>
+                                 {
+                                     new SelectListItem { Text = "Select Course", Value = "1", Selected=true},
+                                     new SelectListItem { Text = "Asp.Net", Value = "2"},
+                                     new SelectListItem { Text = "Java", Value = "3"},
+                                     new SelectListItem { Text = "CSharp", Value = "4"},
+                                     new SelectListItem { Text = "Python", Value = "5"}
+
+                                 },"Ado.Net")
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                        Skills:
+                        @Html.DropDownList("Skills", new List<SelectListItem>
+                                 {
+                                     new SelectListItem { Text = "Select Skills", Value = "1", Selected=true},
+                                     new SelectListItem { Text = "Communication Skills", Value = "2"},
+                                     new SelectListItem { Text = "Technical Skills", Value = "3"},
+                                     new SelectListItem { Text = "Functional Skills", Value = "4"},
+                                     new SelectListItem { Text = "Proactive", Value = "5"}
+                                 }, "Organized")
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td> <button>Register</button></td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>
